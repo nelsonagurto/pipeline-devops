@@ -11,8 +11,8 @@ def call(){
 	agent any
 	
 	environment {
-		bash 'env'
-	    STAGE = ''
+		//sh 'env'
+	    //STAGE = ''
 	}
 
 	parameters {
