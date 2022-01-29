@@ -17,7 +17,7 @@ def call(){
 
 	parameters {
 		//choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construccion')
-		string(name:'stage', description:'Ingrese Stage a Ejecutar',defaultValue: '')
+		string(name:'stage', description:'Ingrese Stage a Ejecutar', defaultValue:'')
 	}
 
 	stages{
