@@ -11,7 +11,7 @@ def call(){
 	agent any
 	
 	environment {
-		bat 'env'
+		bash 'env'
 	    STAGE = ''
 	}
 
