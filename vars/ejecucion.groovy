@@ -11,11 +11,13 @@ def call(){
 	agent any
 	
 	environment {
+		sh 'env'
 	    STAGE = ''
 	}
 
 	parameters {
-		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construcción')
+		//choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construccion')
+		string(name:'stage', description:'Ingrese Stage a Ejecutar',default: '')
 	}
 
 	stages{
