@@ -6,13 +6,13 @@
 
 def call(){
   
-	if (${params.STAGE} == "build") {
+	//if (${params.STAGE} == "build") {
 		echo "ejecuta stage: ${params.STAGE}"
 		//gradle()
-	} else {
+	} //else {
 		//figlet 'Pipeline   Maven'
 		//echo "stage escrito: ${params.STAGE}"
 		//maven()
-	}	
+	//}	
 }
 return this;
