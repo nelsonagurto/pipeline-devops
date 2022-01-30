@@ -23,7 +23,7 @@ def call(){
 
 	stages{
 		stage('Pipeline'){
-		//stage = ${params.STAGE}  //env.STAGE_NAME
+		echo env.STAGE
 		//println "Stage: ${env.STAGE_NAME}"
 			steps{
 				script{
