@@ -29,7 +29,7 @@ def call(){
 				script{										
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
-						echo  ${env.STAGE}
+						echo  ${params.env.STAGE}   //${env.STAGE}
 						//echo "stage escrito: " + ${env.STAGE}
 						//println ${params.env.STAGE}
 	                    gradle()
