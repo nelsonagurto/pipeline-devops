@@ -5,11 +5,7 @@
 */
 
 def call(){
-  
-   environment {
-                STAGE = ${params.STAGE}
-            }
-			
+  			
 	echo "ejecuta stage: ${params.STAGE}"
 	
 	 if (${params.STAGE} == "build") {
