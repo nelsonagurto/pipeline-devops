@@ -7,6 +7,12 @@
 def call(){
   
 	echo "ejecuta stage: ${params.STAGE}"
+	
+	 if (${params.STAGE} == "build") {
+		bat "./gradlew.bat clean build" 
+	} else {
+		echo "ejecuta maven"
+	}
 
 }
 return this;
