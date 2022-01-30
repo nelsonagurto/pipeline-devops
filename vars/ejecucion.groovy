@@ -18,7 +18,7 @@ def call(){
 
 	parameters {
 		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construccion')
-		string(name: 'STAGE_seleccionado', defaultValue: '', description: 'Ingrese Stage a Ejecutar')
+		string(name: 'STAGE', defaultValue: '', description: 'Ingrese Stage a Ejecutar')
 	}
 
 	stages{
@@ -30,7 +30,7 @@ def call(){
 										
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
-						echo "stage escrito: ${params.STAGE_seleccionado}"
+						echo "stage escrito: ${params.STAGE}"
 	                    gradle()
 	                } else {
 						figlet 'Pipeline   Maven'
