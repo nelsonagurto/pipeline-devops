@@ -27,11 +27,11 @@ def call(){
 			steps{
 				script{
 										
-	                if (params.buildTool == "gradle") {
-						figlet 'Pipeline Gradle'
-	                   gradle()
+	                if (params.stage == "gradle") {
+						figlet 'Pipeline   Gradle'
+	                    gradle()
 	                } else {
-						figlet 'Pipeline Maven'
+						figlet 'Pipeline   Maven'
 	                    maven()
 	                }
 				}
