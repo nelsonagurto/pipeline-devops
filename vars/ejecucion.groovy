@@ -12,7 +12,7 @@ def call(){
 	
 	environment {
 		
-	    STAGE = ${params.env.STAGE}
+	    STAGE = ''
 		DISABLE_AUTH = 'true'
 	}
 
@@ -29,7 +29,7 @@ def call(){
 				script{										
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
-						echo STAGE
+						echo  ${env.STAGE}
 						//echo "stage escrito: " + ${env.STAGE}
 						//println ${params.env.STAGE}
 	                    gradle()
