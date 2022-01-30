@@ -10,8 +10,7 @@ def call(){
                 STAGE = ${params.STAGE}
             }
 			
-	//echo "ejecuta stage: ${params.STAGE}"
-	echo "ejecuta stage: ${params.STAGE}
+	echo "ejecuta stage: ${params.STAGE}"
 	
 	 if (${params.STAGE} == "build") {
 		stage('build'){
