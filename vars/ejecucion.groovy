@@ -30,7 +30,7 @@ def call(){
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
 						//echo "stage escrito: " + ${env.STAGE}
-						echo ${env.STAGE}
+						println ${params.env.STAGE}
 	                    gradle()
 	                } else {
 						figlet 'Pipeline   Maven'
