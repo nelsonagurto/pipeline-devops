@@ -7,7 +7,7 @@
 def call(){
   
 	if (${params.STAGE} == "build") {
-		echo "ejecuta stage: ${params.STAGE}
+		echo "ejecuta stage: ${params.STAGE}"
 		//gradle()
 	} else {
 		//figlet 'Pipeline   Maven'
