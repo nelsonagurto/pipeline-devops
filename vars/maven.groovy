@@ -6,22 +6,22 @@
 
 def call(){
 
-  stage('Compile') {
+  stage('compile') {
     STAGE = env.STAGE_NAME
     bat "./mvnw.cmd clean compile -e"
   }
 
-  stage('Test') {
+  stage('test') {
     STAGE = env.STAGE_NAME
     bat "./mvnw.cmd clean test -e"
   }
 
-  stage('Jar') {
+  stage('jar') {
     STAGE = env.STAGE_NAME
     bat "./mvnw.cmd clean package -e"
   }
 
-  stage('Run') {
+  stage('run') {
     STAGE = env.STAGE_NAME
 		bat "start /min mvnw.cmd spring-boot:run &"
 		sleep 20
