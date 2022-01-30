@@ -7,8 +7,9 @@
 def call(){
   
 	echo "ejecuta stage: ${params.STAGE}"
+	STAGE = ${params.STAGE}
 	
-	 if (${params.STAGE} == "build") {
+	 if (STAGE == "build") {
 		stage('build'){
 			bat "./gradlew.bat clean build"  
 		}
