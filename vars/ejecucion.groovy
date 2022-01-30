@@ -19,12 +19,11 @@ def call(){
 	parameters {
 		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construccion')
 		string(name: 'STAGE', defaultValue: '', description: 'Ingrese Stage a Ejecutar')
-		//string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 	}
 
 	stages{
 		stage('Pipeline'){
-		STAGE = ${params.STAGE}  //env.STAGE_NAME
+		//stage = ${params.STAGE}  //env.STAGE_NAME
 		//println "Stage: ${env.STAGE_NAME}"
 			steps{
 				script{
