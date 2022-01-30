@@ -27,7 +27,7 @@ def call(){
 			steps{
 				script{
 										
-	                if (params.stage.name == "gradle") {
+	                if (params.stage == "gradle") {
 						figlet 'Pipeline   Gradle'
 	                    gradle()
 	                } else {
