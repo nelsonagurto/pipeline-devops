@@ -13,6 +13,7 @@ def call(){
 	environment {
 		
 	    STAGE = ''
+		DISABLE_AUTH = 'true'
 	}
 
 	parameters {
@@ -39,7 +40,7 @@ def call(){
 
 	post {
 		success {
-			slackSend color: 'good', message: "[${env.USER}][${env.JOB_NAME}][${params.buildTool}] Ejecucion exitosa."
+			slackSend color: 'good', message: "[${DISABLE_AUTH}][${env.JOB_NAME}][${params.buildTool}] Ejecucion exitosa."
 		}
 
 		failure {
