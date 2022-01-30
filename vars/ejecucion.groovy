@@ -28,7 +28,7 @@ def call(){
 										
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
-						figlet params.stage.name
+						//figlet params.stage.name
 	                    gradle()
 	                } else {
 						figlet 'Pipeline   Maven'
