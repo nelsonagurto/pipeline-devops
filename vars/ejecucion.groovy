@@ -25,7 +25,7 @@ def call(){
 		stage('Pipeline'){
 		//USER = env.USER
 		//println "user: ${env.USER}"
-		figlet params.stage.name
+		println params.stage.name
 			steps{
 				script{
 										
