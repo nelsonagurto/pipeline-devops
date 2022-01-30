@@ -35,7 +35,7 @@ def call(){
 	                    gradle()
 	                } else {
 						figlet 'Pipeline   Maven'
-						echo "stage escrito: ${params.STAGE}"
+						//echo "stage escrito: ${params.STAGE}"
 	                    maven()
 	                }
 				}
