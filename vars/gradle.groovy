@@ -6,7 +6,7 @@
 
 def call(){
   
-	stage('Build & Unit Test'){
+	stage('Build'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 		bat "./gradlew.bat clean build"   
