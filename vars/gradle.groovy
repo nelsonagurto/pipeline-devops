@@ -5,12 +5,15 @@
 */
 
 def call(){
-  			
-	//echo "ejecuta stage: " + ${params.STAGE}
+  	environment {
+		
+	    STAGE = ''
+	}
+	
 	stage('build'){
-		STAGE = env.STAGE
-		println "Stage: ${env.STAGE}"
-		//echo "stage escrito: ${params.STAGE}"
+		STAGE = ${params.STAGE}  //env.STAGE
+		//println "Stage: ${env.STAGE}"
+		echo "stage escrito: ${params.STAGE}"
 		//bat "./gradlew.bat clean build"  
 	}
 
