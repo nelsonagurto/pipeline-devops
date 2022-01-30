@@ -23,14 +23,14 @@ def call(){
 
 	stages{
 		stage('Pipeline'){
-		STAGE = env.STAGE_NAME
-		println "Stage: ${env.STAGE_NAME}"
+		//STAGE = env.STAGE_NAME
+		//println "Stage: ${env.STAGE_NAME}"
 			steps{
 				script{
 										
 	                if (params.buildTool == "gradle") {
 						figlet 'Pipeline   Gradle'
-						//figlet params.stage.name
+						echo "escribio stage, ${stage}"
 	                    gradle()
 	                } else {
 						figlet 'Pipeline   Maven'
