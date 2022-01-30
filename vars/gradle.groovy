@@ -6,28 +6,28 @@
 
 def call(){
   
-	stage('Build'){
+	stage('build'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 		bat "./gradlew.bat clean build"   
 	}
 
-	stage('Sonar'){
+	stage('sonar'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
-	stage('Run'){
+	stage('run'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
-	stage('Test'){
+	stage('test'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
-	stage('Nexus'){
+	stage('nexus'){
 		STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
