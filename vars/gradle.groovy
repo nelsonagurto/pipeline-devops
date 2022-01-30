@@ -6,7 +6,7 @@
 
 def call(){
   			
-	echo "ejecuta stage: " + ${params.STAGE}
+	echo "ejecuta stage: " 
 	
 
 }
