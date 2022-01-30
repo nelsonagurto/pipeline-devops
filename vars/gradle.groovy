@@ -6,16 +6,8 @@
 
 def call(){
   			
-	echo "ejecuta stage: " + env.STAGE    //${params.STAGE}"
+	echo "ejecuta stage: " + ${params.STAGE}
 	
-	 if (${params.STAGE} == "build") {
-		stage('build'){
-			bat "./gradlew.bat clean build"  
-		}
-	} else {
-		//figlet 'Pipeline   Maven'
-		//echo "stage escrito: ${params.STAGE}"
-		//maven()
-	}
+
 }
 return this;
