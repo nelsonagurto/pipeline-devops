@@ -28,7 +28,7 @@ void call(String[] stagesToRun) {
     if (currentStages.contains(stageBuild)) {
         stage(stageBuild) {
             CURRENT_STAGE = stageBuild
-				dir('F:\Diplomado DevOps\Modulo III\nelson_agurto\pipeline-devops'){
+				dir('F:/Diplomado DevOps/Modulo III/nelson_agurto/pipeline-devops'){
 					bat "./mvnw.cmd clean compile -e"
 					bat "./mvnw.cmd clean test -e"
 					bat "./mvnw.cmd clean package -e"
