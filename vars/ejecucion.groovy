@@ -1,61 +1,38 @@
-/*
-	forma de invocación de método call:
-	def ejecucion = load 'script.groovy'
-	ejecucion.call()
-*/
+void call() {
+    pipeline {
+        agent any
+        environment {
+            CURRENT_STAGE = ''
+        }
 
-def call(){
-  
- pipeline {
+        parameters {
+            choice choices: ['maven', 'gradle'], description: 'indicar la herramienta de construccion', name: 'buildTool'
+            string defaultValue: '', description: 'Stages a ejecutar', name: 'stage'
+        }
+        stages {
+            stage('pipeline') {
+                steps {
+                    script {
+                        String[] mySteps = params.stage.split(';')
 
-	agent any
-	
-	environment {
-		
-	    STAGE = ''
-		DISABLE_AUTH = 'true'
-	}
-
-	parameters {
-		choice(name: 'buildTool', choices: ['gradle', 'maven'], description: 'Indicar herramienta de construccion')
-		string(name: 'STAGE', defaultValue: '', description: 'Ingrese Stage a Ejecutar')
-	}
-
-	stages{
-		stage('Pipeline'){
-		//println ${env.STAGE}
-		//println "Stage: ${env.STAGE_NAME}"
-			steps{
-				script{										
-	                if (params.buildTool == "gradle") {
-						figlet 'Pipeline   Gradle'
-						//echo  ${params.STAGE}   //${env.STAGE}
-						//echo "stage escrito: " + ${env.STAGE}
-						//println ${params.env.STAGE}
-	                    gradle()
-	                } else {
-						figlet 'Pipeline   Maven'
-						//echo "stage escrito: ${params.STAGE}"
-	                    maven()
-	                }
-				}
-			}
-		}
-	}
-
-	post {
-		success {
-			slackSend color: 'good', message: "[${DISABLE_AUTH}][${env.JOB_NAME}][${params.buildTool}] Ejecucion exitosa."
-		}
-
-		failure {
-			slackSend color: 'danger', message: "[${env.USER}][${env.JOB_NAME}][${params.buildTool}] Ejecucion fallida en stage ${STAGE}."
-			error "Ejecución fallida en stage ${STAGE}"
-		}
-	}
+                        if (params.buildTool == 'maven') {
+                            maven.call(mySteps)
+                        } else {
+                            gradle.call(mySteps)
+                        }
+                    }
+                }
+            }
+        }
+        post {
+            success {
+                slackSend(color: '#00FF00', message: '[Nelson Agurto][' + env.JOB_NAME + '][' + params.buildTool + '] Ejecucion Exitosa.')
+            }
+            failure {
+                slackSend(color: '#FF0000', message: '[Nelson Agurto][' + env.JOB_NAME + '][' + params.buildTool + '] Ejecucion Fallida en Stage [' + CURRENT_STAGE + '].')
+            }
+        }
+    }
 }
 
-
-}
-
-return this;
+return this
