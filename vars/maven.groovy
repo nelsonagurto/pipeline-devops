@@ -28,7 +28,7 @@ void call(String[] stagesToRun) {
     if (currentStages.contains(stageBuild)) {
         stage(stageBuild) {
             CURRENT_STAGE = stageBuild
-            bat "./mvnw.cmd clean compile -e"
+            bat "./mvnw clean compile -e"
             bat "./mvnw clean test -e"
             bat "./mvnw clean package -e"
         }
