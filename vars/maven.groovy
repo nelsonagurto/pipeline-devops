@@ -1,8 +1,8 @@
 def call(){
 
   stage('compile') {
-    STAGE = env.STAGE_NAME
-	//figlet CURRENT_STAGE
+    //STAGE = env.STAGE_NAME
+	figlet env.STAGE_NAME
     //bat "./mvnw.cmd clean compile -e"
   }
 /*
