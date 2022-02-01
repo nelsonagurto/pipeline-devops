@@ -20,6 +20,7 @@ def call(){
 
   stage('run') {
     //STAGE = env.STAGE_NAME
+	CURRENT_STAGE = run
 	figlet CURRENT_STAGE 
 		//bat "start /min mvnw.cmd spring-boot:run &"
 		//sleep 20

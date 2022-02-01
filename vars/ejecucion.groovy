@@ -47,7 +47,7 @@ def call(){
 		}
 
 		failure {
-			slackSend color: 'danger', message: "[Nelson Agurto][${env.JOB_NAME}][${params.buildTool}] Ejecucion fallida en stage [' + ${env.STAGE_NAME} + ']."
+			slackSend color: 'danger', message: "[Nelson Agurto][${env.JOB_NAME}][${params.buildTool}] Ejecucion fallida en stage [' + ${CURRENT_STAGE} + ']."
 		}
 	}
  }
