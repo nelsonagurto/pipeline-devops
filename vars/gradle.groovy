@@ -8,25 +8,25 @@ def call(){
 	}
 	
 	stage('sonar'){
-		figlet CURRENT_STAGE
+		figlet env.STAGE_NAME
 		//STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
 	stage('run'){
-		figlet CURRENT_STAGE
+		figlet env.STAGE_NAME
 		//STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
 	stage('test'){
-		figlet CURRENT_STAGE
+		figlet env.STAGE_NAME
 		//STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
 
 	stage('nexus'){
-		figlet CURRENT_STAGE
+		figlet env.STAGE_NAME
 		//STAGE = env.STAGE_NAME
 		println "Stage: ${env.STAGE_NAME}"
 	}
