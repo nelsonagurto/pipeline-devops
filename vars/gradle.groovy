@@ -1,6 +1,6 @@
 def call(){
   	stage('build'){
-		figlet CURRENT_STAGE
+		figlet env.STAGE_NAME
 		//STAGE = env.STAGE_NAME
 		//println "Stage: ${env.STAGE_NAME}"
 		//echo "stage escrito: ${params.STAGE}"
